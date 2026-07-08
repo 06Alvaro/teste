@@ -10,7 +10,7 @@ export function loadModel(app) {
 
     loader.load(
 
-        "models/model.glb",
+        "model.glb",
 
         (gltf) => {
 
