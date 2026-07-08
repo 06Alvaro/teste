@@ -1,0 +1,231 @@
+    *{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+    }
+
+    body{
+
+    overflow:hidden;
+    font-family:Segoe UI,Arial,sans-serif;
+    background:#0d1117;
+
+    }
+
+    #app{
+
+    display:grid;
+
+    grid-template-columns:
+
+    280px
+    1fr
+    320px;
+
+    height:100vh;
+
+    }
+
+    /* MENU */
+
+    #sidebar{
+
+    background:#161b22;
+
+    padding:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    border-right:1px solid #30363d;
+
+    }
+
+    .logo{
+
+    text-align:center;
+    margin-bottom:25px;
+
+    }
+
+    .logo h1{
+
+    color:white;
+    font-size:28px;
+
+    }
+
+    .logo p{
+
+    color:#8b949e;
+
+    }
+
+    .search input{
+
+    width:100%;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#21262d;
+
+    color:white;
+
+    margin-bottom:25px;
+
+    }
+
+    nav{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    }
+
+    .menuButton{
+
+    background:#21262d;
+
+    color:white;
+
+    border:none;
+
+    padding:15px;
+
+    font-size:15px;
+
+    text-align:left;
+
+    cursor:pointer;
+
+    border-radius:12px;
+
+    transition:.25s;
+
+    }
+
+    .menuButton:hover{
+
+    background:#2383ff;
+
+    transform:translateX(6px);
+
+    }
+
+    /* VIEWER */
+
+    #viewer{
+
+    position:relative;
+
+    background:
+
+    linear-gradient(
+    160deg,
+    #0b1220,
+    #141d2c
+    );
+
+    }
+
+    #canvasContainer{
+
+    width:100%;
+    height:100%;
+
+    }
+
+    /* PAINEL */
+
+    #infoPanel{
+
+    background:#161b22;
+
+    padding:25px;
+
+    border-left:1px solid #30363d;
+
+    color:white;
+
+    }
+
+    #infoPanel h2{
+
+    margin-bottom:20px;
+
+    }
+
+    #boneName{
+
+    margin-top:25px;
+
+    margin-bottom:15px;
+
+    font-size:23px;
+
+    color:#58a6ff;
+
+    }
+
+    #boneDescription{
+
+    line-height:1.8;
+
+    color:#c9d1d9;
+
+    }
+
+    /* RESPONSIVO */
+
+    @media(max-width:1100px){
+
+    #app{
+
+    grid-template-columns:
+
+    220px
+    1fr;
+
+    }
+
+    #infoPanel{
+
+    display:none;
+
+    }
+
+    }
+
+    @media(max-width:800px){
+
+    #sidebar{
+
+    position:absolute;
+
+    z-index:100;
+
+    width:260px;
+
+    height:100%;
+
+    }
+
+    #app{
+
+    grid-template-columns:
+
+    1fr;
+
+    }
+
+    }
