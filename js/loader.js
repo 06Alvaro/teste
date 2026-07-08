@@ -53,30 +53,29 @@ export function loadModel(app) {
             // Ajustar câmera
             // ===========================
 
-            const size = box.getSize(new THREE.Vector3());
+            const box = new THREE.Box3().setFromObject(model);
 
-            const maxDimension = Math.max(
-                size.x,
-                size.y,
-                size.z
-            );
+const center = new THREE.Vector3();
+box.getCenter(center);
 
-            const distance = maxDimension * 2.0;
+const size = new THREE.Vector3();
+box.getSize(size);
 
-            app.camera.position.set(
-                0,
-                maxDimension * 0.3,
-                distance
-            );
-            app.camera.lookAt(0, 0, 0);
+const maxDim = Math.max(size.x, size.y, size.z);
 
-            app.controls.target.set(0, 0, 0);
-            app.controls.update();
-            app.camera.near = 0.01;
-            app.camera.far = 1000;
-            app.camera.updateProjectionMatrix();
+camera.position.copy(center);
 
-            app.controls.target.set(0, 0, 0);
+camera.position.x += maxDim * 1.5;
+camera.position.y += maxDim * 0.7;
+camera.position.z += maxDim * 2.2;
+camera.near = 0.01;
+camera.far = maxDim * 100;
+
+camera.updateProjectionMatrix();
+
+camera.lookAt(center);
+controls.target.copy(center);
+controls.update();
             app.controls.update();
 
             app.scene.add(model);
