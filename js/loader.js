@@ -68,7 +68,10 @@ export function loadModel(app) {
                 maxDimension * 0.3,
                 distance
             );
+            app.camera.lookAt(0, 0, 0);
 
+            app.controls.target.set(0, 0, 0);
+            app.controls.update();
             app.camera.near = 0.01;
             app.camera.far = 1000;
             app.camera.updateProjectionMatrix();
