@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Atlas Anatômico 3D</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div id="app">
+
+    <!-- MENU -->
+
+    <aside id="sidebar">
+
+        <div class="logo">
+
+            <h1>🦴 Atlas 3D</h1>
+
+            <p>Anatomia Humana</p>
+
+        </div>
+
+        <div class="search">
+
+            <input
+            type="text"
+            placeholder="Pesquisar osso..."
+            id="searchBox">
+        </div>
+
+        <nav>
+
+            <button class="menuButton" data-group="all">
+                🌎 Corpo inteiro
+            </button>
+
+            <button class="menuButton" data-group="head">
+                💀 Cabeça
+            </button>
+
+            <button class="menuButton" data-group="spine">
+                🦴 Coluna
+            </button>
+
+            <button class="menuButton" data-group="thorax">
+                🫁 Tórax
+            </button>
+
+            <button class="menuButton" data-group="pelvis">
+                🦴 Pelve
+            </button>
+
+            <button class="menuButton" data-group="lArm">
+                💪 MSE
+            </button>
+
+            <button class="menuButton" data-group="rArm">
+                💪 MSD
+            </button>
+
+            <button class="menuButton" data-group="lLeg">
+                🦵 MIE
+            </button>
+
+            <button class="menuButton" data-group="rLeg">
+                🦵 MID
+            </button>
+
+        </nav>
+
+    </aside>
+
+    <!-- VISUALIZADOR -->
+
+    <main id="viewer">
+
+        <div id="canvasContainer"></div>
+
+    </main>
+
+    <!-- PAINEL -->
+
+    <aside id="infoPanel">
+
+        <h2>Informações</h2>
+
+        <hr>
+
+        <h3 id="boneName">
+
+            Nenhum osso selecionado
+
+        </h3>
+
+        <p id="boneDescription">
+
+            Clique em um osso para visualizar informações anatômicas.
+
+        </p>
+
+    </aside>
+
+</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+
+<script type="module" src="js/app.js"></script>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module" src="js/app.js"></script>
+
+</body>
+
+</html>
